@@ -1050,6 +1050,8 @@ RUN if [ ${INSTALL_WKHTMLTOPDF} = true ]; then \
       xfonts-base \
       xfonts-75dpi \
       wget \
+    && wget "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_${ARCH}.deb" \
+    && dpkg -i "libssl1.1_1.1.1f-1ubuntu2_${ARCH}.deb" \
     && wget "https://github.com/wkhtmltopdf/packaging/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_0.12.6-1.stretch_${ARCH}.deb" \
     && dpkg -i "wkhtmltox_${WKHTMLTOPDF_VERSION}.stretch_${ARCH}.deb" \
     && apt -f install \
