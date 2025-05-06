@@ -1,7 +1,8 @@
 /var/log/nginx/*.log {
         daily
+        size 1G
         missingok
-        rotate 32
+        rotate 3
         compress
         delaycompress
         nodateext
