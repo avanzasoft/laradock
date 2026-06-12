@@ -58,6 +58,10 @@ services:
 ### Workspace Utilities ##################################
     workspace:
       restart: always
+      ulimits:
+        nofile:
+          soft: 65535
+          hard: 524288
       build:
         context: ./workspace
         args:
@@ -219,6 +223,10 @@ services:
 ### PHP-FPM ##############################################
     php-fpm:
       restart: always
+      ulimits:
+        nofile:
+          soft: 65535
+          hard: 524288
       build:
         context: ./php-fpm
         args:
@@ -341,6 +349,10 @@ services:
 ### PHP Worker ############################################
     php-worker:
       restart: always
+      ulimits:
+        nofile:
+          soft: 65535
+          hard: 524288
       build:
         context: ./php-worker
         args:
